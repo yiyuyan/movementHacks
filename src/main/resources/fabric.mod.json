@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "${mod_id}",
+	"version": "${version}",
+	"name": "${mod_name}",
+	"description": "${description}",
+	"authors": [
+		"${authors}"
+	],
+	"license": "${license}",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+      "cn.ksmcbrigade.rd_mh.MovementHacksMod"
+		]
+	},
+	"mixins": [
+		"${mod_id}.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3"
+	}
+}

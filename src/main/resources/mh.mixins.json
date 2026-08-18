@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.ksmcbrigade.rd_mh.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "PlayerMixin",
+    "RdMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

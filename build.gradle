@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+	id 'net.fabricmc.fabric-loom-remap' version '1.17.19'
+	id 'ploceus' version '1.17.7'
+}
+
+base {
+	archivesName = archives_base_name
+}
+
+loom {
+	clientOnlyMinecraftJar()
+}
+
+ploceus {
+	setIntermediaryGeneration(1)
+	clientOnlyMappings()
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation(files("libs/rd-132211-launcher.jar"))
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	mappings ploceus.featherMappings(project.feather_build)
+}
+
+processResources {
+	inputs.property "version", version
+	inputs.property "mod_id", mod_id
+	inputs.property "mod_name", mod_name
+	inputs.property "description",mod_description
+	inputs.property "license",mod_license
+	inputs.property "authors", mod_authors
+
+	filesMatching("fabric.mod.json") {
+		expand(
+			"version": version,
+			"mod_id": mod_id,
+			"mod_name":	mod_name,
+			"description":	mod_description,
+			"license":	mod_license,
+			"authors":	mod_authors
+		)
+	}
+}
