@@ -42,8 +42,8 @@ public class MovementHacksMod implements ModInitializer {
 			}
 			JsonObject object = JsonParser.parseString(FileUtils.readFileToString(configFile)).getAsJsonObject();
 			if(object.has("sprint-key")) sprintKey = object.get("sprint-key").getAsInt();
-			if(object.has("shift-key")) sprintKey = object.get("shift-key").getAsInt();
-			if(object.has("fly-key")) sprintKey = object.get("fly-key").getAsInt();
+			if(object.has("shift-key")) shiftKey = object.get("shift-key").getAsInt();
+			if(object.has("fly-key")) flyKey = object.get("fly-key").getAsInt();
 
 			if(object.has("sprint-multi")) sprintMulti = object.get("sprint-multi").getAsFloat();
 
